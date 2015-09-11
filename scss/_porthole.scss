@@ -1,0 +1,42 @@
+/**
+ * Porthole
+ *
+ * A porthole is a generally circular window.
+ *
+ * @level X.X.
+ * @markup
+ * <div class="c-porthole" style="width: 16em;">
+ *   <div class="c-porthole__inner">
+ *     <img src="http://lorempixel.com/400/400/" alt="" />
+ *   </div>
+ * </div>
+ */
+// Variables
+$c-porthole-border: 1em solid #fff;
+$c-porthole-shadow: 0 0 0.5em rgba($cs-grey-c, 0.8);
+
+
+
+.c-porthole {
+  @include u-aspect-ratio(1, 1, '.c-porthole__inner');
+  overflow: hidden;
+  border-radius: 50%;
+  @if $c-porthole-border {
+    border: $c-porthole-border;
+  }
+  @if $c-porthole-shadow {
+    box-shadow: $c-porthole-shadow;
+  }
+  @if $c-porthole-shadow {
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      box-shadow: inset $c-porthole-shadow;
+      content: '';
+    }
+  }
+}
