@@ -26,8 +26,6 @@ $c-porthole-shadow: 0 0 0.5em rgba($cs-grey-c, 0.8);
   }
   @if $c-porthole-shadow {
     box-shadow: $c-porthole-shadow;
-  }
-  @if $c-porthole-shadow {
     &:after {
       position: absolute;
       top: 0;
